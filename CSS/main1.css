@@ -31,13 +31,13 @@
     border: 1px solid #000;
 }
 
-#boltDataTitle {
+#boltDataTitle #jointDataTitle {
     width: 100%;
     padding-left: 5%;
     padding-left: 20px;
 }
 
-#bdTitle {
+#bdTitle #jntTitle {
     width: 100%;
     text-align: left;
     color: #000;
@@ -45,7 +45,7 @@
     font-weight: 600;
 } 
 
-#boltData {
+.boltData .jointData {
     position: relative;
     overflow: auto;
     width: 100%;
@@ -54,7 +54,7 @@
     font-weight: 200;
 }
 
-#description {
+.description {
     overflow: auto;
     font-size: 12px;
     font-weight: 200;
@@ -62,28 +62,32 @@
     /*padding-right: 20px;*/
 }
 
-#symbol {
+.symbol {
     overflow: auto;
     font-size: 12px;
     font-weight: 200;
-    padding-left: 20px;
-    /*padding-right: 20px;*/
+    /* padding-left: 20px;
+    padding-right: 20px;*/
 }
 
-#value {
+.greek {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.value {
     overflow: auto;
     font-size: 12px;
     font-weight: 200;
     padding-left: 0px;
     text-align: center;
-    margin-left: -8%;
+    /* margin-left: -8%; */
 }
 
-#units {
+.units {
     overflow: auto;
     font-size: 12px;
     font-weight: 200;
     padding-left: 0px;
     text-align: left;
-    margin-left: -8%;
+    /* margin-left: -8%; */
 }
