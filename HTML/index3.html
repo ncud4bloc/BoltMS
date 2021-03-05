@@ -16,11 +16,14 @@
     <div class="grid" id="content">
         <div id="title">
             <p id="introTitle">Threaded Bolt Analysis: Loads &amp Margins of Safety Calculator</p>
-            <p id="intro">This spreadsheet calculates bolt loads and margins of safety based primarily on the methodologies documented in "An Introduction to the Design and Behavior of Bolted Joints", by J. H. Bickford, 3<sup>rd</sup> Edition, 1995.</p>
+            <p id="intro">This spreadsheet calculates bolt loads and margins of safety based on the methodologies documented in "An Introduction to the Design and Behavior of Bolted Joints", by J. H. Bickford, 3<sup>rd</sup> Edition, 1995.</p>
         </div>
+        <!--<div id="start">Click Here to Start</div>-->
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 select">Enter Bolt Diameter</div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 select">Enter Threads per Inch</div>
         <div id="article1">
             <div id="boltDataTitle">
-                <p id="bdTitle">Bolt Dimensions &amp Allowables</p>
+                <p id="bdTitle">Bolt Dimensions &amp Material Properties</p>
             </div>
             <div class="boltData">
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 description">
@@ -50,15 +53,16 @@
                     <p>Bolt Tensile Force Allow</p>
                     <p>Bolt Shear Stress Allow</p>
                     <p>Bolt Shear Force Allow</p>
+                    <p>Bolt Young's Modulus</p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
-                    <p class="greek notop">a</p><p>N<sub>t</sub></p><p>p</p><p class="greek">s<sub>A</sub></p><p>F<sub>A</sub></p><p class="greek">t<sub>A</sub></p><p>S<sub>A</sub></p>
+                    <p class="greek notop">a</p><p>N<sub>t</sub></p><p>p</p><p class="greek">s<sub>A</sub></p><p>F<sub>A</sub></p><p class="greek">t<sub>A</sub></p><p>S<sub>A</sub></p><p>E<sub>b</sub></p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
-                    <p class="notop">30</p><p>32</p><p>0.03125</p><p>160000</p><p>2241</p><p>95000</p><p>2007</p>
+                    <p class="notop">30</p><p>32</p><p>0.03125</p><p>160000</p><p>2241</p><p>95000</p><p>2007</p><p>2.82e+7</p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
-                    <p class="notop">degrees</p><p>per inch</p><p>in</p><p>psi</p><p>lbf</p><p>psi</p><p>lbf</p>
+                    <p class="notop">degrees</p><p>per inch</p><p>in</p><p>psi</p><p>lbf</p><p>psi</p><p>lbf</p><p>psi</p>
                 </div>
             </div>
         </div>
@@ -93,7 +97,7 @@
                     <p>Elastic Interaction Factor</p>
                     <p>Scatter Factor</p>
                     <p>Friction Coefficient</p>
-                    <p>Friction coefficient</p>
+                    <p>Friction Coefficient</p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
                     <p>FF</p><p>WF</p><p>EF</p><p>EIF</p><p>SF</p><p class="greek">m<sub>t</sub></p><p class="greek">m<sub>t</sub></p>
