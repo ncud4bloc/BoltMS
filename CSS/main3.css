@@ -1,0 +1,109 @@
+/* #content {
+    width: 100%; --- Not Needed - covered by .grid in nccworks12.css
+} */
+
+#title {
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#introTitle {
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 28px;
+    font-weight: 900;
+} 
+
+#intro {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#article1 {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+#article2 {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    border: 1px solid #000;
+}
+
+#boltDataTitle #jointDataTitle {
+    width: 100%;
+    padding-left: 5%;
+    padding-left: 20px;
+}
+
+#bdTitle #jntTitle {
+    width: 100%;
+    text-align: left;
+    color: #000;
+    font-size: 24px;
+    font-weight: 600;
+} 
+
+.boltData .jointData {
+    position: relative;
+    overflow: auto;
+    width: 100%;
+    border: 1px solid #000;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.description {
+    overflow: auto;
+    font-size: 12px;
+    font-weight: 200;
+    padding-left: 20px;
+    /*padding-right: 20px;*/
+}
+
+.symbol {
+    overflow: auto;
+    font-size: 12px;
+    font-weight: 200;
+    /* padding-left: 20px;
+    padding-right: 20px;*/
+}
+
+.greek {
+    font-family: 'Inter', sans-serif !important;
+}
+
+.value {
+    overflow: auto;
+    font-size: 12px;
+    font-weight: 200;
+    padding-left: 0px;
+    text-align: center;
+    /* margin-left: -8%; */
+}
+
+.units {
+    overflow: auto;
+    font-size: 12px;
+    font-weight: 200;
+    padding-left: 0px;
+    text-align: left;
+    /* margin-left: -8%; */
+}
+
+@media (max-width: 1064px) {
+  .notop {
+    margin-top: 0px !important;
+}
+   #ffix1 {
+    clear: left;
+}
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bolt Margin of Safety Calculator</title>
+    <link href="../CSS/normalize.css" type="text/css" rel="stylesheet" />
+    <link href="../CSS/nccworks12.css" type="text/css" rel="stylesheet" />
+    <link href="../CSS/main3.css" type="text/css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css?family=Dancing+Script|Fruktur|Pacifico|Poiret+One|Yellowtail" rel="stylesheet">-->
+  </head>
+  <body> 
+    <div class="grid" id="content">
+        <div id="title">
+            <p id="introTitle">Threaded Bolt Analysis: Loads &amp Margins of Safety Calculator</p>
+            <p id="intro">This spreadsheet calculates bolt loads and margins of safety based primarily on the methodologies documented in "An Introduction to the Design and Behavior of Bolted Joints", by J. H. Bickford, 3<sup>rd</sup> Edition, 1995.</p>
+        </div>
+        <div id="article1">
+            <div id="boltDataTitle">
+                <p id="bdTitle">Bolt Dimensions &amp Allowables</p>
+            </div>
+            <div class="boltData">
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 description">
+                    <p>Bolt Nominal Diameter</p>
+                    <p>Hole Major Diameter</p>
+                    <p>Hole Pitch Diameter (max)</p>
+                    <p>Bolt Minor Diameter (min)</p>
+                    <p>Bolt Pitch Diameter (min)</p>
+                    <p>Bolt Inner Diameter (hollow)</p>
+                    <p>Bolt Shear Plane Diameter</p>
+                    <p>Bolt Head Diameter</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
+                    <p>D</p><p>D<sub>hm</sub></p><p>D<sub>hp</sub></p><p>D<sub>bm</sub></p><p>D<sub>bp</sub></p><p>D<sub>bh</sub></p><p>D<sub>s</sub></p><p>D<sub>c</sub></p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
+                    <p>0.164</p><p>0.164</p><p>0.1302</p><p>0.1257</p><p>0.1437</p><p>0.0</p><p>0.164</p><p>0.322</p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
+                    <p>in</p><p>in</p><p>in</p><p>in</p><p>in</p><p>in</p><p>in</p><p>in</p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 description">
+                    <p class="notop">Thread Half Angle</p>
+                    <p>Threads per Inch</p>
+                    <p>Bolt Pitch</p>
+                    <p>Bolt Tensile Stress Allow</p>
+                    <p>Bolt Tensile Force Allow</p>
+                    <p>Bolt Shear Stress Allow</p>
+                    <p>Bolt Shear Force Allow</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
+                    <p class="greek notop">a</p><p>N<sub>t</sub></p><p>p</p><p class="greek">s<sub>A</sub></p><p>F<sub>A</sub></p><p class="greek">t<sub>A</sub></p><p>S<sub>A</sub></p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
+                    <p class="notop">30</p><p>32</p><p>0.03125</p><p>160000</p><p>2241</p><p>95000</p><p>2007</p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
+                    <p class="notop">degrees</p><p>per inch</p><p>in</p><p>psi</p><p>lbf</p><p>psi</p><p>lbf</p>
+                </div>
+            </div>
+        </div>
+        <div id="article2">
+            <div id="jointDataTitle">
+                <p id="jntTitle">Joint Information &amp Applied Factors</p>
+            </div>
+            <div class="jointData">
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 description">
+                    <p>Joint Grip Length</p>
+                    <p>Installation Torque</p>
+                    <p>Applied Tensile Load</p>
+                    <p>Applied Shear Load</p>
+                    <p>Thread Engagement Length</p>
+                    <p>Clamped Area Angle</p>
+                    <p>Ultimate Safety Factor</p>
+                    <p>Yield Safety Factor</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
+                    <p>g</p><p>T</p><p>P<sub>ex</sub></p><p>V<sub>ex</sub></p><p>L<sub>e</sub></p><p class="greek">B</p><p>SFU</p><p>SFY</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
+                    <p>0.175</p><p>20.0</p><p>50.1</p><p>895.1</p><p>0.11</p><p>25.0</p><p>1.25</p><p>1.1</p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
+                    <p>in</p><p>in-lbf</p><p>lbf</p><p>lbf</p><p>in</p><p>degrees</p><p>ult</p><p>yld</p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 description" id="ffix1">
+                    <p class="notop">Fitting Factor</p>
+                    <p>Wrench Factor</p>
+                    <p>Embedment Factor</p>
+                    <p>Elastic Interaction Factor</p>
+                    <p>Scatter Factor</p>
+                    <p>Friction Coefficient</p>
+                    <p>Friction coefficient</p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
+                    <p>FF</p><p>WF</p><p>EF</p><p>EIF</p><p>SF</p><p class="greek">m<sub>t</sub></p><p class="greek">m<sub>t</sub></p>
+                </div>
+                <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
+                    <p class="notop">1.15</p><p>0.25</p><p>0.02</p><p>0.02</p><p>0.1</p><p>0.2</p><p>0.2</p>
+                </div>
+                <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
+                    <p class="notop">yld &amp ult</p><p>yld &amp ult</p><p>on preload</p><p>on preload</p><p>on preload</p><p> thread</p><p>head</p>
+                </div>
+            </div>
+        </div>
+    </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="../JS/BAcalc1.js"></script> -->
+  </body>
+</html>
