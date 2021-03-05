@@ -91,3 +91,9 @@
     text-align: left;
     /* margin-left: -8%; */
 }
+
+@media (max-width: 1064px) {
+  .notop {
+    margin-top: 0px !important;
+}
+}
