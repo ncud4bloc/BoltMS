@@ -19,8 +19,8 @@
             <p id="intro">This spreadsheet calculates bolt loads and margins of safety based on the methodologies documented in "An Introduction to the Design and Behavior of Bolted Joints", by J. H. Bickford, 3<sup>rd</sup> Edition, 1995.</p>
         </div>
         <!--<div id="start">Click Here to Start</div>-->
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 select">Enter Bolt Diameter</div>
-        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 select">Enter Threads per Inch</div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 select" id="diameter">Enter Bolt Diameter</div>
+        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 select" id="threads">Enter Threads per Inch</div>
         <div id="article1">
             <div id="boltDataTitle">
                 <p id="bdTitle">Bolt Dimensions &amp Material Properties</p>
@@ -40,14 +40,14 @@
                     <p>D</p><p>D<sub>hm</sub></p><p>D<sub>hp</sub></p><p>D<sub>bm</sub></p><p>D<sub>bp</sub></p><p>D<sub>bh</sub></p><p>D<sub>s</sub></p><p>D<sub>c</sub></p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
-                    <p>0.164</p><p>0.164</p><p>0.1302</p><p>0.1257</p><p>0.1437</p><p>0.0</p><p>0.164</p><p>0.322</p>
+                    <p id="d">0.164</p><p id="dhm">0.164</p><p id="dhp">0.1302</p><p id="dbm">0.1257</p><p id="dbp">0.1437</p><p id="dbh">0.0</p><p id="ds">0.164</p><p id="dc">0.322</p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
                     <p>in</p><p>in</p><p>in</p><p>in</p><p>in</p><p>in</p><p>in</p><p>in</p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 description">
-                    <p class="notop">Thread Half Angle</p>
-                    <p>Threads per Inch</p>
+                    <p class="notop">Threads per Inch</p>
+                    <p>Thread Half Angle</p>
                     <p>Bolt Pitch</p>
                     <p>Bolt Tensile Stress Allow</p>
                     <p>Bolt Tensile Force Allow</p>
@@ -56,13 +56,13 @@
                     <p>Bolt Young's Modulus</p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
-                    <p class="greek notop">a</p><p>N<sub>t</sub></p><p>p</p><p class="greek">s<sub>A</sub></p><p>F<sub>A</sub></p><p class="greek">t<sub>A</sub></p><p>S<sub>A</sub></p><p>E<sub>b</sub></p>
+                    <p class="greek notop">N<sub>t</sub></p><p>a</p><p>p</p><p class="greek">s<sub>A</sub></p><p>F<sub>A</sub></p><p class="greek">t<sub>A</sub></p><p>S<sub>A</sub></p><p>E<sub>b</sub></p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
-                    <p class="notop">30</p><p>32</p><p>0.03125</p><p>160000</p><p>2241</p><p>95000</p><p>2007</p><p>2.82e+7</p>
+                    <p class="notop" id="nt">32</p><p id="a">30</p><p id="p">0.03125</p><p id="tensileSA">160000</p><p id="tensileFA">2241</p><p id="shearSA">95000</p><p id="shearFA">2007</p><p id="eb">2.82e+7</p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
-                    <p class="notop">degrees</p><p>per inch</p><p>in</p><p>psi</p><p>lbf</p><p>psi</p><p>lbf</p><p>psi</p>
+                    <p class="notop">per inch</p><p>degrees</p><p>in</p><p>psi</p><p>lbf</p><p>psi</p><p>lbf</p><p>psi</p>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
                     <p>g</p><p>T</p><p>P<sub>ex</sub></p><p>V<sub>ex</sub></p><p>L<sub>e</sub></p><p class="greek">B</p><p>SFU</p><p>SFY</p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
-                    <p>0.175</p><p>20.0</p><p>50.1</p><p>895.1</p><p>0.11</p><p>25.0</p><p>1.25</p><p>1.1</p>
+                    <p id="g">0.175</p><p id="t">20.0</p><p id="pex">50.1</p><p id="vex">895.1</p><p id="le">0.11</p><p id="b">25.0</p><p id="sfu">1.25</p><p id="sfy">1.1</p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
                     <p>in</p><p>in-lbf</p><p>lbf</p><p>lbf</p><p>in</p><p>degrees</p><p>ult</p><p>yld</p>
@@ -100,10 +100,10 @@
                     <p>Friction Coefficient</p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 symbol">
-                    <p>FF</p><p>WF</p><p>EF</p><p>EIF</p><p>SF</p><p class="greek">m<sub>t</sub></p><p class="greek">m<sub>t</sub></p>
+                    <p>FF</p><p>WF</p><p>EF</p><p>EIF</p><p>SF</p><p class="greek">m<sub>t</sub></p><p class="greek">m<sub>h</sub></p>
                 </div>
                 <div class="col-xs-2 col-sm-2 col-md-1 col-lg-1 value">
-                    <p class="notop">1.15</p><p>0.25</p><p>0.02</p><p>0.02</p><p>0.1</p><p>0.2</p><p>0.2</p>
+                    <p class="notop" id="ff">1.15</p><p id="wf">0.25</p><p id="ef">0.02</p><p id="eif">0.02</p><p id="sf">0.1</p><p id="mt">0.2</p><p id="mh">0.2</p>
                 </div>
                 <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 units">
                     <p class="notop">yld &amp ult</p><p>yld &amp ult</p><p>on preload</p><p>on preload</p><p>on preload</p><p> thread</p><p>head</p>
@@ -112,25 +112,7 @@
         </div>
     </div>
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- <script src="../JS/BAcalc1.js"></script> -->
+    <script src="../JS/boltMS.js"></script>
   </body>
 </html>

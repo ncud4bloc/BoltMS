@@ -82,7 +82,8 @@
 }
 
 #bdTitle #jntTitle {
-    width: 100%;
+    width: 50%;
+    margin: 0 auto;
     text-align: left;
     color: #000;
     font-size: 24px;
