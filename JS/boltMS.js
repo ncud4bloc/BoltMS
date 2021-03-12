@@ -58,16 +58,26 @@ function update(){
 $(function(){
         
     $('#diameter').on('click',function(){     
-        d = prompt('Bolt diameter in decimal format: ');
+        d = prompt('Enter bolt diameter in decimal format: ');
         console.log('bolt dia = ' + d);
-        //calculate(); 
-        //update();
+        if ((d==0.164) || (d==0.19) || (d==0.25) || (d==0.3125) || (d==0.375) || (d==0.4375) || (d==0.5) || (d==0.5625) || (d==0.625) || (d==0.75) || (d==0.875) || (d==1.0)){
+            //calculate(); 
+            //update();
+        } else {
+            alert('Invalid diameter entered; please enter valid decimal value from 0.164 to 1.0');
+            d = 0.164;
+        }
     });   
     
     $('#threads').on('click',function(){     
-        nt = prompt('Number threads per inch: ');
+        nt = prompt('Enter number of threads per inch: ');
         console.log('threads = ' + nt);
-        //calculate();
-        //update();
+        if ((nt==12) || (nt==14) || (nt==16) || (nt==18) || (nt==20) || (nt==24) || (nt==28) || (nt==32) || (nt==36)){
+            //calculate(); 
+            //update();
+        } else {
+            alert('Invalid thread count entered; please enter valid value from 12 to 36');
+            nt = 32;
+        }
     });  
 });
