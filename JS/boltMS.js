@@ -31,6 +31,9 @@ var sf = 0.1;           // scatter factor
 var mt = 0.2;           // bolt thread friction coefficient
 var mh = 0.2;           // bolt head friction coefficient
 
+var gotDia = false;     // no bolt diameter input yet specified
+var gotNumT = false;    // no bolt thread input yet specified
+
 
 /* ---------------  Functions  --------------- */
 
@@ -49,8 +52,59 @@ function vectorCalc(disToTarget){
 //}
 
 function update(){
-    $('d')
-}
+    if((gotDia==true) && (gotNumT==true)){
+        var xhr = new XMLHttpRequest();
+        
+        xhr.onload = function(){
+            if(xhr.status === 200){
+                responseObject = JSON.parse(xhr.responseText);
+                
+                for (var i = 0; i < responseObject.bolts.length; i++){
+                    if((responseObject.bolts[i].size == d) && (responseObject.bolts[i].pitch == nt)){
+                        d = responseObject.bolts[i].D; 
+                        dhm = responseObject.bolts[i].Dhm;
+                        dhp = responseObject.bolts[i].Dhp;
+                        dbm = responseObject.bolts[i].Dbm;
+                        dbp = responseObject.bolts[i].Dbp;
+                        dbh = responseObject.bolts[i].Dbh;
+                        ds = responseObject.bolts[i].Ds;
+                        dc = responseObject.bolts[i].Dc;
+                    }
+                }
+                //Update the display here
+                var detail = d.toFixed(4);
+                $('#d').text('');
+                $('#d').text(detail);
+                var detail = dhm.toFixed(4);
+                $('#dhm').text('');
+                $('#dhm').text(detail);
+                var detail = dhp.toFixed(4);
+                $('#dhp').text('');
+                $('#dhp').text(detail);
+                var detail = dbm.toFixed(4);
+                $('#dbm').text('');
+                $('#dbm').text(detail);
+                var detail = dbp.toFixed(4);
+                $('#dbp').text('');
+                $('#dbp').text(detail);
+                var detail = dbh.toFixed(4);
+                $('#dbh').text('');
+                $('#dbh').text(detail);
+                var detail = ds.toFixed(4);
+                $('#ds').text('');
+                $('#ds').text(detail);
+                var detail = dc.toFixed(4);
+                $('#dc').text('');
+                $('#dc').text(detail);
+            }
+        };
+        //xhr.open('GET', '../JSON/dimensions.json', true);
+        xhr.open('GET', 'https://github.com/ncud4bloc/boltMS/JSON/dimensions.json', true);
+        xhr.send(null);   
+        gotDia = false;
+        gotNumT = false;
+    } 
+};
 
 
 /* -------------  Function Calls  ------------ */
@@ -61,9 +115,11 @@ $(function(){
         d = prompt('Enter bolt diameter in decimal format: ');
         console.log('bolt dia = ' + d);
         if ((d==0.164) || (d==0.19) || (d==0.25) || (d==0.3125) || (d==0.375) || (d==0.4375) || (d==0.5) || (d==0.5625) || (d==0.625) || (d==0.75) || (d==0.875) || (d==1.0)){
-            //calculate(); 
-            //update();
+            gotDia = true; 
+            update();
+            //calculate();
         } else {
+            gotDia = false;
             alert('Invalid diameter entered; please enter valid decimal value from 0.164 to 1.0');
             d = 0.164;
         }
@@ -73,9 +129,11 @@ $(function(){
         nt = prompt('Enter number of threads per inch: ');
         console.log('threads = ' + nt);
         if ((nt==12) || (nt==14) || (nt==16) || (nt==18) || (nt==20) || (nt==24) || (nt==28) || (nt==32) || (nt==36)){
-            //calculate(); 
-            //update();
+            gotNumT = true;
+            update();
+            //calculate();
         } else {
+            gotNumT = false;
             alert('Invalid thread count entered; please enter valid value from 12 to 36');
             nt = 32;
         }
